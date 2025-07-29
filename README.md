@@ -13,19 +13,20 @@
 
 ## 🔥 Key Highlights
 
-1. **State-of-the-Art Performance**
-   - Outperforms Qwen2.5-Omni-7B on **multiple key audio understanding tasks**
+**State-of-the-Art Performance**
+   - Outperforms Qwen2.5-Omni-7B, Kimi-Audio-Instruct-7B on **multiple key audio understanding tasks**.
 
-1. **High Efficiency**
-   - **3.2× speedup** at comparable batch sizes than Qwen2.5-Omni-7B
-   - Supports **batch size=200** (30s audio) on 80GB GPUs (compared to batch size=8 for Qwen2.5-Omni-7B)
+**High Efficiency**
+   - **3.2× throughput speedup** at comparable batch sizes compared to Qwen2.5-Omni-7B.
+   - 20x throughput speedup by increasing furhter batchsizes. We tested up to a **batch size=512** for 30s audio input on 80GB GPUs. Baselines only support batch size = 8.
+   - Time-to-first-token (TTFT) speedup of up to 4x compared to Qwen2.5-Omni-7B.
 
-1. **Caption-based Alignment**
-   - Trained with **general audio captions** (instead of ASR transcripts) to achieve holistic audio understanding
+**Caption-based Alignment**
+   - Trained with **general audio captions** (instead of ASR transcripts) to achieve holistic audio understanding.
 
-1. **Full Transparency**
-   - **100% open-source** training data and reproducible pipeline
-   - Apache License 2.0 for **both research and commercial use**
+**Full Transparency**
+   - **Public-source** training data and reproducible pipeline.
+   - Apache License 2.0 for **both research and commercial use**.
 
 <div align="center">
     <img src="fig/capabilities_plot_7b-1.png" width="600">
@@ -52,20 +53,20 @@ in a unified textual format. This design enables holistic audio understanding wh
 
 ### Why Captions Instead of ASR?
 
-- **ASR Limitations**:
-  - Discards huge amount of non-speech audio (music/environmental sounds)
-  - Misses paralinguistic info (speaker emotion, acoustic properties)
-  - Monotonic alignment provides trivial learning signal
+ASR Limitations:
+  - Discards huge amount of non-speech audio (music/environmental sounds).
+  - Misses paralinguistic info (speaker emotion, acoustic properties).
+  - Monotonic alignment provides trivial learning signal.
 
-- **Caption Advantages**:
-  - Utilizes 100% audio content
-  - Captures global audio context
+Caption Advantages:
+  - Utilizes all audio content.
+  - Captures global audio context.
+  - Non-monotonic alignment provides a hard learning signal.
 
 ### Novel Open Source Dataset for Training: ACAVCaps
 
 ACAVCaps is a meticulously curated 38,662-hour collection of general audio captions derived from the open-source [ACAV100M audio repository](https://acav100m.github.io/).
-While leveraging ACAV100M's extensive raw audio materials,
-we completely re-engineered the annotation process to create a dataset for holistic audio understanding.
+While leveraging ACAV100M's extensive raw audio materials, we completely re-engineered the annotation process to create a dataset for holistic audio understanding.
 We devide the dataset into six categories:
 
 | Category | Example Caption |
