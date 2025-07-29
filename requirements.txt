@@ -1,0 +1,10 @@
+torch>=2.6.0
+transformers>=45.2.1
+evaluate
+edit_distance
+editdistance
+scikit-learn
+textdistance
+more_itertools
+zhconv
+sentence-transformers
