@@ -3,7 +3,7 @@
     MiDashengLM
     </h1>
     <b><em>Efficient audio understanding with general audio captions</em></b></em></b>
-    </p>
+    <p>
     </p>
     <a href="https://arxiv.org/abs/2507.xxxxx"><img src="https://img.shields.io/badge/arXiv-2507.xxxxx-b31b1b" alt="version"></a>
     <a href="https://huggingface.co/mispeech/MiDashengLM"><img src="https://img.shields.io/badge/HuggingFace-7B-ffcc66" alt="version"></a>
