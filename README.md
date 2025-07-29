@@ -429,6 +429,6 @@ If you find MiDashengLM useful in your research, please consider citing our work
 ```bibtex
 @misc{midashenglm7b,
     title = {MiDashengLM: Efficient Audio Understanding with General Audio Captions},
-    author = {Horizon Team, MiLM Plus, Xiaomi Inc.},
+    author = {Xiaomi MiLM Plus Horizon Team},
     year = {2025},
 }
