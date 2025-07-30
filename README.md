@@ -6,9 +6,10 @@
     <p>
     </p>
     <a href="https://arxiv.org/abs/2507.xxxxx"><img src="https://img.shields.io/badge/arXiv-2507.xxxxx-b31b1b" alt="version"></a>
-    <a href="https://huggingface.co/mispeech/MiDashengLM"><img src="https://img.shields.io/badge/HuggingFace-7B-ffcc66" alt="version"></a>
+    <a href="https://huggingface.co/mispeech/MiDashengLM-7B"><img src="https://img.shields.io/badge/HuggingFace-7B-ffcc66" alt="version"></a>
+    <a href="https://modelscope.cn/models/midasheng/midashenglm-7b"><img src="https://img.shields.io/badge/ModelScope-7B-7448ce" alt="version"></a>
     <a href="https://huggingface.co/spaces/mispeech/MiDashengLM"><img src="https://img.shields.io/badge/Demo-Gradio-ffcc66" alt="version"></a>
-    <a href="https://frankenliu.github.io/midashenglm_demo/"><img src="https://img.shields.io/badge/Demo-Page-0366d6" alt="version"></a>
+    <a href="https://frankenliu.github.io/xiaomi-research/dasheng-lm/"><img src="https://img.shields.io/badge/Demo-Page-0366d6" alt="version"></a>
 </div>
 
 ## 🔥 Key Highlights
@@ -17,9 +18,9 @@
    - Outperforms Qwen2.5-Omni-7B, Kimi-Audio-Instruct-7B on **multiple key audio understanding tasks**.
 
 **High Efficiency**
-   - **3.2× throughput speedup** at comparable batch sizes compared to Qwen2.5-Omni-7B.
-   - 20x throughput speedup by increasing furhter batchsizes. We tested up to a **batch size=512** for 30s audio input on 80GB GPUs. Baselines only support batch size = 8.
-   - Time-to-first-token (TTFT) speedup of up to 4x compared to Qwen2.5-Omni-7B.
+   - **3.2×** throughput speedup at comparable batch sizes compared to Qwen2.5-Omni-7B.
+   - **20x** throughput speedup by increasing furhter batchsizes. We tested up to a **batch size=512** for 30s audio input on 80GB GPUs. Baselines only support batch size = 8.
+   - Time-to-first-token (TTFT) speedup of up to **4x** compared to Qwen2.5-Omni-7B.
 
 **Caption-based Alignment**
    - Trained with **general audio captions** (instead of ASR transcripts) to achieve holistic audio understanding.
@@ -211,7 +212,7 @@ MiDashengLM delivers solid performance across diverse audio understanding tasks.
 
 To reproduce our results, we provide:
 
-- Prompt templates ([prompt.csv](evaluate/prompt.csv))
+- Prompts ([prompt.csv](evaluate/prompt.csv))
 - Evaluation scripts
 - Example JSONL files
 
