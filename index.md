@@ -1,10 +1,12 @@
-## Introduction
+# MiDashengLM-7B Demo
 
-MiDashengLM integrates the powerful Dasheng audio encoder with the Qwen2.5-Omni-7B Thinker decoder through a unique caption-based alignment strategy.
-Unlike conventional ASR-driven approaches, our model leverages general audio captions to capture comprehensive audio representations encompassing speech, environmental sounds, and musical elements
-in a unified textual format.
-This design enables holistic audio understanding while maintaining exceptional computational efficiency.  
-There two tasks that we want to show you some examples.
+## 👉 Try on Hugging Face Space
+
+<a href="http://huggingface.co/spaces/mispeech/MiDashengLM-7B">
+  <img src="./hf-space.png" 
+       alt="MiDashengLM-7B Demo" 
+       style="width:60%; max-width:600px; display:block; margin:0 auto; border:3px solid #2563eb;">
+</a>
 
 ## Speech Meta Analysis(SMA)
 
