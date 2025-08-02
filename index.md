@@ -5,7 +5,7 @@
 <a href="http://huggingface.co/spaces/mispeech/MiDashengLM-7B">
   <img src="./hf-space.png" 
        alt="MiDashengLM-7B Demo" 
-       style="width:60%; max-width:600px; display:block; margin:0 auto; border:3px solid #2563eb;">
+       width="12.5%">
 </a>
 
 ## Speech Meta Analysis(SMA)
