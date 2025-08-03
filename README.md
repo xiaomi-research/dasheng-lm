@@ -135,6 +135,7 @@ messages = [
 
 ```python
 import torch
+
 with torch.no_grad():
     model_inputs = processor.apply_chat_template(
         messages,
