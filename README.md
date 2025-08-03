@@ -5,7 +5,7 @@
     <b><em>Efficient audio understanding with general audio captions</em></b></em></b>
     <p>
     </p>
-    <a href="https://arxiv.org/abs/2507.xxxxx"><img src="https://img.shields.io/badge/arXiv-2507.xxxxx-b31b1b" alt="version"></a>
+    <a href="https://github.com/xiaomi-research/dasheng-lm/blob/main/technical_report/MiDashengLM_techreport.pdf"><img src="https://img.shields.io/badge/arXiv-2507.xxxxx-b31b1b" alt="version"></a>
     <a href="https://huggingface.co/mispeech/MiDashengLM-7B"><img src="https://img.shields.io/badge/HuggingFace-7B-ffcc66" alt="version"></a>
     <a href="https://modelscope.cn/models/midasheng/midashenglm-7b"><img src="https://img.shields.io/badge/ModelScope-7B-7448ce" alt="version"></a>
     <a href="https://huggingface.co/spaces/mispeech/MiDashengLM"><img src="https://img.shields.io/badge/Demo-Gradio-ffcc66" alt="version"></a>
