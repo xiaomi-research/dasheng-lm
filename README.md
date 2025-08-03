@@ -87,7 +87,7 @@ Each caption is generated through a three-step process:
 
 1. **Multi-expert analysis** (speech, vocal, music, acoustics)
 2. **LLM reasoning** synthesizing metadata with [DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1)
-3. **Filtering** for audio-text consistency with [GLAP](https://github.com/xiaomi-research/dasheng-glap)
+3. **Filtering** for audio-text consistency with [Dasheng-GLAP](https://github.com/xiaomi-research/dasheng-glap)
 
 We will **release the ACAVCaps dataset** after the ICASSP 2026 review process.
 
