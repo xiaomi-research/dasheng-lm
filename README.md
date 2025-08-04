@@ -37,7 +37,7 @@
 
 Although MiDashengLM demonstrates superior audio understanding performance and efficiency compared to Qwen2.5-Omni models,
 we acknowledge **Qwen2.5-Omni as a remarkable and respected foundational work** in the field.
-Our model specifically uses [Qwen2.5-Omni-7B Thinker](https://huggingface.co/Qwen/Qwen2.5-Omni-7B) as the decoder starting point during training, building upon its robust architecture and weight initialization.
+Our model specifically uses [Qwen2.5-Omni-7B Thinker](https://huggingface.co/Qwen/Qwen2.5-Omni-7B) as the initialization for decoder training, building upon its robust architecture and weight initialization.
 
 The audio encoder is built upon [Dasheng](https://github.com/XiaoMi/dasheng), an open-source audio encoder for general audio understanding with state-of-the-art performance.
 **Dasheng serves as the core foundation enabling MiDashengLM's exceptional performance**.
