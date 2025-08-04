@@ -74,7 +74,7 @@ We devide the dataset into six categories:
 |----------|-----------------|
 | Pure Speech | "A female voice narrates historical competition with synthetic modulation" |
 | Pure Sound | "Outdoor scene with wind, birds, duck quacking and background noise" |
-| Mixed Music | "Crowd cheering with electronic synthesizer-driven soundscape" |
+| Pure Music | "Crowd cheering with electronic synthesizer-driven soundscape" |
 | Mixed Music | "The audio features a crowd cheering and clapping alongside electronic music with a synthesizer-driven, dark, and energetic soundscape." |
 | Mixed Speech | "A Russian voice demonstrates a synthesizer’s capabilities over an experimental electronic backdrop, explaining its sound design and value in a gritty, vocal-fry tone." |
 | Mixed Sound | "A man speaks in English about entering a city and village, accompanied by the sounds of a running vehicle." |
