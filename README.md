@@ -96,18 +96,19 @@ We will **release the ACAVCaps dataset** after the ICASSP 2026 review process.
 ### Load Model
 
 ```python
-from transformers import AutoModelForCausalLM, AutoProcessor
+from transformers import AutoModelForCausalLM, AutoProcessor, AutoTokenizer
 
 model_id = "mispeech/midashenglm-7b"
 
 model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True)
+tokenizer = AutoTokenizer.from_pretrained(model_id)
 processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
 ```
 
 ### Construct Prompt
 
 ```python
-user_prompt = "Caption the audio."  # You may try any other prompt 
+user_prompt = "Caption the audio."  # You may try any other prompt
 
 messages = [
     {
@@ -145,7 +146,7 @@ with torch.no_grad():
         return_dict=True,
     )
     generation = model.generate(**model_inputs)
-    output = processor.batch_decode(generation, skip_special_tokens=True)  # ["An engine is idling."]
+    output = tokenizer.batch_decode(generation, skip_special_tokens=True)  # ["An engine is idling."]
 ```
 
 ## Results
