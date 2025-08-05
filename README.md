@@ -101,7 +101,7 @@ from transformers import AutoModelForCausalLM, AutoProcessor, AutoTokenizer
 model_id = "mispeech/midashenglm-7b"
 
 model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True)
-tokenizer = AutoTokenizer.from_pretrained(model_id)
+tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
 processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
 ```
 
