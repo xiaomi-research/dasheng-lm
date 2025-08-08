@@ -1,5 +1,5 @@
 torch>=2.6.0
-transformers>=45.2.1
+transformers>=4.52.1
 evaluate
 edit_distance
 editdistance
