@@ -1,5 +1,7 @@
+librosa>=0.11.0
 torch>=2.6.0
-transformers>=45.2.1
+torchaudio>=2.6.0
+transformers>=4.52.1
 evaluate
 edit_distance
 editdistance
