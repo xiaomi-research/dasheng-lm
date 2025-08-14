@@ -5,7 +5,7 @@
 <a href="https://modelscope.cn/studios/midasheng/MiDashengLM-7B">
   <img src="./ms-studio.png" 
        alt="MiDashengLM-7B Demo" 
-       width=1000>
+       width=100%>
 </a>
 
 ## Speech Meta Analysis(SMA)
