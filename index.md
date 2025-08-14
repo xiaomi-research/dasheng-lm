@@ -1,6 +1,6 @@
 # MiDashengLM-7B Demo
 
-## 👉 Try on ModelScope Studio (创空间)
+## 👉 Try on [ModelScope Studio (创空间)](https://modelscope.cn/studios/midasheng/MiDashengLM-7B)
 
 <a href="https://modelscope.cn/studios/midasheng/MiDashengLM-7B">
   <img src="./ms-studio.png" 
