@@ -149,6 +149,12 @@ with torch.no_grad():
     output = tokenizer.batch_decode(generation, skip_special_tokens=True)  # ["An engine is idling."]
 ```
 
+### Fine-tuning
+
+We appreciate the [ms-swift](https://github.com/modelscope/ms-swift) implementation contributed by [@JimmyMa99](https://github.com/JimmyMa99) in [ms-swift#5325](https://github.com/modelscope/ms-swift/pull/5325).
+
+We are actively developing **MDL-Toolkit**, a user-friendly fine-tuning toolkit scheduled for release in September 2025.
+
 ## Results
 
 MiDashengLM delivers solid performance across diverse audio understanding tasks.
