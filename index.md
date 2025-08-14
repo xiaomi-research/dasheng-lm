@@ -1,9 +1,9 @@
 # MiDashengLM-7B Demo
 
-## 👉 Try on Hugging Face Space
+## 👉 Try on ModelScope Studio (创空间)
 
-<a href="http://huggingface.co/spaces/mispeech/MiDashengLM-7B">
-  <img src="./hf-space.png" 
+<a href="https://modelscope.cn/studios/midasheng/MiDashengLM-7B">
+  <img src="./ms-studio.png" 
        alt="MiDashengLM-7B Demo" 
        width="18%">
 </a>
