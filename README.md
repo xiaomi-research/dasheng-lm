@@ -12,6 +12,10 @@
     <a href="https://xiaomi-research.github.io/dasheng-lm/"><img src="https://img.shields.io/badge/Demo-Page-0366d6" alt="version"></a>
 </div>
 
+## 📢 News
+
+- ​**2025-09-01**: vLLM integration PR submitted to the official vLLM repository. Preview available in our fork during review. See [Issue #17](https://github.com/xiaomi-research/dasheng-lm/issues/17#issuecomment-3241301450) for details.
+
 ## 🔥 Key Highlights
 
 **State-of-the-Art Performance**
