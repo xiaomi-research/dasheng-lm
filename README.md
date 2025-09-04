@@ -166,7 +166,15 @@ vLLM is a fast and easy-to-use library for LLM inference and serving.
 Install vLLM with `pip` or [from source](https://docs.vllm.ai/en/latest/getting_started/installation/gpu/index.html#build-wheel-from-source):
 
 ```bash
-pip install git+https://github.com/vllm-project/vllm.git
+# Set up using Python-only build (without compilation)
+git clone https://github.com/vllm-project/vllm.git
+cd vllm
+VLLM_USE_PRECOMPILED=1 pip install --editable .
+
+# Full build (with compilation)
+git clone https://github.com/vllm-project/vllm.git
+cd vllm
+pip install -e .
 ```
 
 **Quickstart**
