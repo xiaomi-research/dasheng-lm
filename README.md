@@ -14,6 +14,7 @@
 
 ## 📢 News
 
+- **2025-09-04**: Our PR [[Model] Add MiDashengLM model support](https://github.com/vllm-project/vllm/pull/23652) has been merged by vLLM. vLLM now officially supports MiDashengLM model. [Welcome to deploy dasheng-lm with VLLM](#deploy-with-vllm).
 - ​**2025-09-01**: vLLM integration PR submitted to the official vLLM repository. Preview available in our fork during review. See [Issue #17](https://github.com/xiaomi-research/dasheng-lm/issues/17#issuecomment-3241301450) for details.
 
 ## 🔥 Key Highlights
@@ -158,6 +159,47 @@ with torch.no_grad():
 We appreciate the [ms-swift](https://github.com/modelscope/ms-swift) implementation contributed by [@JimmyMa99](https://github.com/JimmyMa99) in [ms-swift#5325](https://github.com/modelscope/ms-swift/pull/5325).
 
 We are actively developing **MDL-Toolkit**, a user-friendly fine-tuning toolkit scheduled for release in September 2025.
+
+### Deploy with VLLM
+vLLM is a fast and easy-to-use library for LLM inference and serving.
+
+Install vLLM with `pip` or [from source](https://docs.vllm.ai/en/latest/getting_started/installation/gpu/index.html#build-wheel-from-source):
+
+```bash
+# Set up using Python-only build (without compilation)
+git clone https://github.com/vllm-project/vllm.git
+cd vllm
+VLLM_USE_PRECOMPILED=1 pip install --editable .
+
+# Full build (with compilation)
+git clone https://github.com/vllm-project/vllm.git
+cd vllm
+pip install -e .
+```
+
+**Quickstart**
+
+If you have trouble accessing HF, we recommend using [hf-mirror](https://hf-mirror.com/).
+
+```python
+pip install -U huggingface_hub
+
+# Linux env
+export HF_ENDPOINT=https://hf-mirror.com
+
+# Windows Powershell env
+$env:HF_ENDPOINT = "https://hf-mirror.com"
+```
+
+You can find sample code for offline execution in the VLLM repository [audio_language](https://github.com/vllm-project/vllm/blob/51d5e9be7dbf4d914374447548dd01f9bfb68f89/examples/offline_inference/audio_language.py#L150).
+
+```python
+# Offline inference
+python3 examples/offline_inference/audio_language.py -m midashenglm
+
+# Online serving using OpenAI-compatible server
+python3 -m vllm.entrypoints.openai.api_server --model mispeech/midashenglm-7b --tensor-parallel-size 1 --served-model-name default --port 8000 --dtype float16 --max_model_len 4096 --trust_remote_code
+```
 
 ## Results
 
