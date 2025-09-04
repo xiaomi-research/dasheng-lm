@@ -14,6 +14,7 @@
 
 ## 📢 News
 
+- **2025-09-04**: Our PR [[Model] Add MiDashengLM model support](https://github.com/vllm-project/vllm/pull/23652) has been merged by VLLM. vLLM now officially supports MiDashengLM model. [Click here to learn how to deploy with VLLM](#deploy-with-vllm).
 - ​**2025-09-01**: vLLM integration PR submitted to the official vLLM repository. Preview available in our fork during review. See [Issue #17](https://github.com/xiaomi-research/dasheng-lm/issues/17#issuecomment-3241301450) for details.
 
 ## 🔥 Key Highlights
