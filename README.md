@@ -159,6 +159,25 @@ We appreciate the [ms-swift](https://github.com/modelscope/ms-swift) implementat
 
 We are actively developing **MDL-Toolkit**, a user-friendly fine-tuning toolkit scheduled for release in September 2025.
 
+### Deploy with VLLM
+vLLM is a fast and easy-to-use library for LLM inference and serving.
+
+Install vLLM with `pip` or [from source](https://docs.vllm.ai/en/latest/getting_started/installation/gpu/index.html#build-wheel-from-source):
+
+```bash
+pip install vllm
+```
+
+**Quickstart**
+
+```python
+# Offline inference
+python3 examples/offline_inference/audio_language.py -m midashenglm
+
+# Online serving using OpenAI-compatible server
+python3 -m vllm.entrypoints.openai.api_server --model mispeech/midashenglm-7b --tensor-parallel-size 1 --served-model-name default --port 8000 --dtype float16 --max_model_len 4096 --trust_remote_code
+```
+
 ## Results
 
 MiDashengLM delivers solid performance across diverse audio understanding tasks.
