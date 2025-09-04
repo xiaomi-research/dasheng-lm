@@ -14,7 +14,7 @@
 
 ## 📢 News
 
-- **2025-09-04**: vLLM now officially supports MiDashengLM. [Deploy dasheng-lm with vLLM](#deploy-with-vllm).
+- **2025-09-04**: vLLM now officially supports MiDashengLM. [Deploy dasheng-lm with vLLM](#deploy-with-vllm). And we're developing the 4-bit quantized version, please stay tuned.
 - ​**2025-09-01**: vLLM integration PR submitted to the official vLLM repository. Preview available in our fork during review. See [Issue #17](https://github.com/xiaomi-research/dasheng-lm/issues/17#issuecomment-3241301450) for details.
 
 ## 🔥 Key Highlights
@@ -160,8 +160,9 @@ We appreciate the [ms-swift](https://github.com/modelscope/ms-swift) implementat
 
 We are actively developing **MDL-Toolkit**, a user-friendly fine-tuning toolkit scheduled for release in September 2025.
 
-### Deploy with VLLM
-vLLM is a fast and easy-to-use library for LLM inference and serving.
+### Deploy with vLLM
+
+vLLM provides a high-performance, user-friendly library for LLM inference and serving.
 
 Install vLLM with `pip` or [from source](https://docs.vllm.ai/en/latest/getting_started/installation/gpu/index.html#build-wheel-from-source):
 
@@ -192,6 +193,9 @@ You may want to use [hf-mirror](https://hf-mirror.com/) as a mirror of Hugging F
 ```bash
 export HF_ENDPOINT=https://hf-mirror.com
 ```
+
+✨ **Coming Soon**  
+We're currently developing **4-bit quantized versions**.
 
 ## Results
 
