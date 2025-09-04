@@ -165,10 +165,24 @@ vLLM is a fast and easy-to-use library for LLM inference and serving.
 Install vLLM with `pip` or [from source](https://docs.vllm.ai/en/latest/getting_started/installation/gpu/index.html#build-wheel-from-source):
 
 ```bash
-pip install vllm
+pip install git+https://github.com/vllm-project/vllm.git
 ```
 
 **Quickstart**
+
+If you have trouble accessing HF, we recommend using [hf-mirror](https://hf-mirror.com/).
+
+```python
+pip install -U huggingface_hub
+
+# Linux env
+export HF_ENDPOINT=https://hf-mirror.com
+
+# Windows Powershell env
+$env:HF_ENDPOINT = "https://hf-mirror.com"
+```
+
+You can find sample code for offline execution in the VLLM repository [audio_language](https://github.com/vllm-project/vllm/blob/51d5e9be7dbf4d914374447548dd01f9bfb68f89/examples/offline_inference/audio_language.py#L150).
 
 ```python
 # Offline inference
