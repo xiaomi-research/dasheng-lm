@@ -14,7 +14,7 @@
 
 ## 📢 News
 
-- **2025-09-04**: Our PR [[Model] Add MiDashengLM model support](https://github.com/vllm-project/vllm/pull/23652) has been merged by vLLM. vLLM now officially supports MiDashengLM model. [Welcome to deploy dasheng-lm with VLLM](#deploy-with-vllm).
+- **2025-09-04**: vLLM now officially supports MiDashengLM. [Deploy dasheng-lm with vLLM](#deploy-with-vllm).
 - ​**2025-09-01**: vLLM integration PR submitted to the official vLLM repository. Preview available in our fork during review. See [Issue #17](https://github.com/xiaomi-research/dasheng-lm/issues/17#issuecomment-3241301450) for details.
 
 ## 🔥 Key Highlights
@@ -177,28 +177,20 @@ cd vllm
 pip install -e .
 ```
 
-**Quickstart**
-
-If you have trouble accessing HF, we recommend using [hf-mirror](https://hf-mirror.com/).
-
-```python
-pip install -U huggingface_hub
-
-# Linux env
-export HF_ENDPOINT=https://hf-mirror.com
-
-# Windows Powershell env
-$env:HF_ENDPOINT = "https://hf-mirror.com"
-```
-
 You can find sample code for offline execution in the VLLM repository [audio_language](https://github.com/vllm-project/vllm/blob/51d5e9be7dbf4d914374447548dd01f9bfb68f89/examples/offline_inference/audio_language.py#L150).
 
-```python
+```bash
 # Offline inference
 python3 examples/offline_inference/audio_language.py -m midashenglm
 
 # Online serving using OpenAI-compatible server
 python3 -m vllm.entrypoints.openai.api_server --model mispeech/midashenglm-7b --tensor-parallel-size 1 --served-model-name default --port 8000 --dtype float16 --max_model_len 4096 --trust_remote_code
+```
+
+You may want to use [hf-mirror](https://hf-mirror.com/) as a mirror of Hugging Face.
+
+```bash
+export HF_ENDPOINT=https://hf-mirror.com
 ```
 
 ## Results
