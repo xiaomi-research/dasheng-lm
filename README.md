@@ -103,7 +103,7 @@ We will **release the ACAVCaps dataset** after the ICASSP 2026 review process.
 ```python
 from transformers import AutoModelForCausalLM, AutoProcessor, AutoTokenizer
 
-model_id = "mispeech/midashenglm-7b"
+model_id = "mispeech/midashenglm-7b-bf16"  # or "mispeech/midashenglm-7b" for the fp32 version
 
 model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
