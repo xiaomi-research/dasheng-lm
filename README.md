@@ -110,6 +110,12 @@ tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
 processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
 ```
 
+If you are in a region with limited access to Hugging Face resources, you may want to use [hf-mirror](https://hf-mirror.com/) as a mirror of Hugging Face:
+
+```bash
+export HF_ENDPOINT=https://hf-mirror.com
+```
+
 ### Construct Prompt
 
 ```python
@@ -186,12 +192,6 @@ python3 examples/offline_inference/audio_language.py -m midashenglm
 
 # Online serving using OpenAI-compatible server
 python3 -m vllm.entrypoints.openai.api_server --model mispeech/midashenglm-7b --tensor-parallel-size 1 --served-model-name default --port 8000 --dtype float16 --max_model_len 4096 --trust_remote_code
-```
-
-You may want to use [hf-mirror](https://hf-mirror.com/) as a mirror of Hugging Face.
-
-```bash
-export HF_ENDPOINT=https://hf-mirror.com
 ```
 
 ✨ **Coming Soon**  
