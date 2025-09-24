@@ -164,7 +164,7 @@ with torch.no_grad():
 
 We appreciate the [ms-swift](https://github.com/modelscope/ms-swift) implementation contributed by [@JimmyMa99](https://github.com/JimmyMa99) in [ms-swift#5325](https://github.com/modelscope/ms-swift/pull/5325).
 
-We are actively developing **MDL-Toolkit**, a user-friendly fine-tuning toolkit scheduled for release in September 2025.
+We also provide [**MDL-Toolkit**](./mdl-toolkit/README.md), a user-friendly fine-tuning toolkit for MiDashengLM.
 
 ### Deploy with vLLM
 
@@ -194,7 +194,7 @@ python3 examples/offline_inference/audio_language.py -m midashenglm
 python3 -m vllm.entrypoints.openai.api_server --model mispeech/midashenglm-7b --tensor-parallel-size 1 --served-model-name default --port 8000 --dtype float16 --max_model_len 4096 --trust_remote_code
 ```
 
-✨ **Coming Soon**  
+✨ **Coming Soon**
 We're currently developing **4-bit quantized versions**.
 
 ## Results
@@ -480,7 +480,7 @@ If you find MiDashengLM useful in your research, please consider citing our work
 ```bibtex
 @techreport{midashenglm7b,
   title      = {MiDashengLM: Efficient Audio Understanding with General Audio Captions},
-  author     = {{Horizon Team, MiLM Plus}}, 
+  author     = {{Horizon Team, MiLM Plus}},
   institution= {Xiaomi Inc.},
   year       = {2025},
   note       = {Contributors: Heinrich Dinkel et al. (listed alphabetically in Appendix B)},

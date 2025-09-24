@@ -1,0 +1,40 @@
+[project]
+name = "mdl-toolkit"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "datasets[audio]>=3.6.0",
+    "peft>=0.16.0",
+    "pydantic>=2.11.7",
+    "pydantic-settings[yaml]>=2.10.1",
+    "transformers[torch,torch-speech]>=4.56.2",
+    "typing-extensions>=4.14.1",
+]
+
+scripts = { mdl-toolkit = "mdl_toolkit.cli:main" }
+
+[project.optional-dependencies]
+modelscope = [
+    "modelscope>=1.29.1",
+]
+quantization = [
+    "bitsandbytes>=0.47.0",
+]
+
+[dependency-groups]
+dev = [
+    "mdl-toolkit[modelscope,quantization]",
+    "mypy>=1.17.0",
+    "ruff>=0.12.5",
+    "types-tqdm>=4.67.0.20250809",
+]
+
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { mdl_toolkit = "mdl_toolkit" }
+
+[tool.uv.sources]
+mdl-toolkit = { workspace = true }
