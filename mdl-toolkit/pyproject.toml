@@ -13,6 +13,26 @@ dependencies = [
 
 scripts = { mdl-toolkit = "mdl_toolkit.cli:main" }
 
+description = "A user-friendly MiDashengLM fine-tuning toolkit."
+readme = "README.md"
+license = "Apache-2.0"
+keywords = ["MiDashengLM", "fine-tuning"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/xiaomi-research/dasheng-lm"
+Repository = "https://github.com/xiaomi-research/dasheng-lm"
+Issues = "https://github.com/xiaomi-research/dasheng-lm/issues"
+
 [project.optional-dependencies]
 modelscope = [
     "modelscope>=1.29.1",
