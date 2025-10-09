@@ -15,6 +15,7 @@
 
 ## 📢 News
 
+- **2025-10-09**: Uploaded several newly [quantized model variants](https://github.com/xiaomi-research/dasheng-lm#available-model-variants) for resource-constrained devices.
 - **2025-09-24**: Released the [mdl-toolkit](https://github.com/xiaomi-research/dasheng-lm/tree/main/mdl-toolkit), a user-friendly fine-tuning toolkit for MiDashengLM. ESC-50 example Notebook: [en](https://github.com/xiaomi-research/dasheng-lm/blob/main/mdl-toolkit/docs_en/esc-50.ipynb) | [中文](https://github.com/xiaomi-research/dasheng-lm/blob/main/mdl-toolkit/docs_zh/esc-50.ipynb)
 - **2025-09-04**: vLLM now officially supports MiDashengLM. [Deploy dasheng-lm with vLLM](#deploy-with-vllm). And we're developing the 4-bit quantized version, please stay tuned.
 - ​**2025-09-01**: vLLM integration PR submitted to the official vLLM repository. Preview available in our fork during review. See [Issue #17](https://github.com/xiaomi-research/dasheng-lm/issues/17#issuecomment-3241301450) for details.
