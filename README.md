@@ -41,24 +41,6 @@
     <img src="fig/capabilities_plot_7b-1.png" width="600">
 </div>
 
-## Available Model Variants
-
-We provide multiple precision / quantization formats to cover different deployment and fine-tuning scenarios:
-
-| Variant | Format | Hugging Face | ModelScope |
-|:-------:|:------:|:------------:|:----------:|
-| midashenglm-7b | FP32 | [Link](https://huggingface.co/mispeech/midashenglm-7b) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b) |
-| midashenglm-7b-bf16 | BF16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-bf16) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-bf16) |
-| midashenglm-7b-fp8 | FP8 | [Link](https://huggingface.co/mispeech/midashenglm-7b-fp8) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-fp8) |
-| midashenglm-7b-gptq-w4a16 | GPTQ W4A16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-gptq-w4a16) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-gptq-w4a16) |
-
-Usage Guidance:
-
-* **FP32**: Use only when numerical precision is critical (e.g., for rigorous reproduction or benchmarking). For general use, it consumes more resources without a corresponding quality gain.
-* **BF16**: Recommended for most general-purpose scenarios, including inference and fine-tuning. It delivers quality comparable to FP32 while being significantly faster on modern GPUs (e.g., A100, H100, RTX 4090).
-* **FP8**: Optimized for Hopper-class (H100 and newer) GPUs, leveraging hardware support for enhanced performance and memory savings. While older GPUs may see limited performance gains, FP8 can still be used to conserve VRAM, and storage.
-* **GPTQ W4A16**: An ideal choice for resource-constrained environments. It offers broad GPU compatibility and a smaller memory footprint, making it suitable for deployment where VRAM, memory, or storage is limited, provided that a slight trade-off in quality is acceptable.
-
 ## Acknowledgment and Model Foundation
 
 Although MiDashengLM demonstrates superior audio understanding performance and efficiency compared to Qwen2.5-Omni models,
@@ -116,6 +98,24 @@ Each caption is generated through a three-step process:
 3. **Filtering** for audio-text consistency with [Dasheng-GLAP](https://github.com/xiaomi-research/dasheng-glap)
 
 We will **release the ACAVCaps dataset** after the ICASSP 2026 review process.
+
+## Available Model Variants
+
+We provide multiple precision / quantization formats to cover different deployment and fine-tuning scenarios:
+
+| Variant | Format | Hugging Face | ModelScope |
+|:-------:|:------:|:------------:|:----------:|
+| midashenglm-7b | FP32 | [Link](https://huggingface.co/mispeech/midashenglm-7b) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b) |
+| midashenglm-7b-bf16 | BF16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-bf16) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-bf16) |
+| midashenglm-7b-fp8 | FP8 | [Link](https://huggingface.co/mispeech/midashenglm-7b-fp8) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-fp8) |
+| midashenglm-7b-gptq-w4a16 | GPTQ W4A16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-gptq-w4a16) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-gptq-w4a16) |
+
+Usage Guidance:
+
+* **FP32**: Use only when numerical precision is critical (e.g., for rigorous reproduction or benchmarking). For general use, it consumes more resources without a corresponding quality gain.
+* **BF16**: Recommended for most general-purpose scenarios, including inference and fine-tuning. It delivers quality comparable to FP32 while being significantly faster on modern GPUs (e.g., A100, H100, RTX 4090).
+* **FP8**: Optimized for Hopper-class (H100 and newer) GPUs, leveraging hardware support for enhanced performance and memory savings. While older GPUs may see limited performance gains, FP8 can still be used to conserve VRAM, and storage.
+* **GPTQ W4A16**: An ideal choice for resource-constrained environments. It offers broad GPU compatibility and a smaller memory footprint, making it suitable for deployment where VRAM, memory, or storage is limited, provided that a slight trade-off in quality is acceptable.
 
 ## Usage
 
