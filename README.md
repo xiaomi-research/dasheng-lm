@@ -40,6 +40,10 @@
 <div align="center">
     <img src="fig/capabilities_plot_7b-1.png" width="600">
 </div>
+<div align="center">
+    <br>
+    <sup>This 0804 version corresponds to the technical report. Newer version (1021) offers improved performance.</sup>
+</div>
 
 ## Acknowledgment and Model Foundation
 
@@ -103,7 +107,7 @@ We will **release the ACAVCaps dataset** after the ICASSP 2026 review process.
 
 We provide multiple precision / quantization formats to cover different deployment and fine-tuning scenarios:
 
-| Variant | Format | Hugging Face | ModelScope |
+| Variant | Format | Hugging Face (0804) | ModelScope (0804) |
 |:-------:|:------:|:------------:|:----------:|
 | midashenglm-7b | FP32 | [Link](https://huggingface.co/mispeech/midashenglm-7b-0804-fp32) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-0804-fp32) |
 | midashenglm-7b-bf16 | BF16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-0804-bf16) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-0804-bf16) |
@@ -116,6 +120,8 @@ Usage Guidance:
 * **BF16**: Recommended for most general-purpose scenarios, including inference and fine-tuning. It delivers quality comparable to FP32 while being significantly faster on modern GPUs (e.g., A100, H100, RTX 4090).
 * **FP8**: Optimized for Hopper-class (H100 and newer) GPUs, leveraging hardware support for enhanced performance and memory savings. While older GPUs may see limited performance gains, FP8 can still be used to conserve VRAM, and storage.
 * **GPTQ W4A16**: An ideal choice for resource-constrained environments. It offers broad GPU compatibility and a smaller memory footprint, making it suitable for deployment where VRAM, memory, or storage is limited, provided that a slight trade-off in quality is acceptable.
+
+The full list model variants of MiDashengLM: [Hugging Face](https://huggingface.co/models?search=midashenglm-) / [Model Scope](https://huggingface.co/models?search=midashenglm-)
 
 ## Usage
 
