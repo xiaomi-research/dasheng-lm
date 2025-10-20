@@ -15,7 +15,7 @@
 
 ## 📢 News
 
-- **2025-10-21**: [MiDashengLM-7b-1021](https://huggingface.co/mispeech/midashenglm-7b-1021-fp32) supports the instruction-following mode, enabling the model to follow human instructions in the audio. It plays a key role in building an audio question-answering assistant for efficient and natural interactions. The examples are in the [Gradio](https://modelscope.cn/studios/midasheng/MiDashengLM-7B).
+- **2025-10-21**: Model updated from 0804 (tech report version) to [1021](https://huggingface.co/mispeech/midashenglm-7b-1021-fp32), supports audio-embedded instructions (e.g., "Follow the instruction at the start of an audio.") previously text-only.
 - **2025-10-09**: Uploaded several newly [quantized model variants](https://github.com/xiaomi-research/dasheng-lm#available-model-variants) for resource-constrained devices.
 - **2025-09-24**: Released the [mdl-toolkit](https://github.com/xiaomi-research/dasheng-lm/tree/main/mdl-toolkit), a user-friendly fine-tuning toolkit for MiDashengLM. ESC-50 example Notebook: [en](https://github.com/xiaomi-research/dasheng-lm/blob/main/mdl-toolkit/docs_en/esc-50.ipynb) | [中文](https://github.com/xiaomi-research/dasheng-lm/blob/main/mdl-toolkit/docs_zh/esc-50.ipynb)
 - **2025-09-04**: vLLM now officially supports MiDashengLM. [Deploy dasheng-lm with vLLM](#deploy-with-vllm). And we're developing the 4-bit quantized version, please stay tuned.
