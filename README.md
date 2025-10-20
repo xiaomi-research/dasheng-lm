@@ -6,7 +6,7 @@
     <p>
     </p>
     <a href="https://arxiv.org/abs/2508.03983"><img src="https://img.shields.io/badge/arXiv-2508.03983-b31b1b" alt="version"></a>
-    <a href="https://huggingface.co/mispeech/MiDashengLM-7B"><img src="https://img.shields.io/badge/HuggingFace-7B-ffcc66" alt="version"></a>
+    <a href="https://huggingface.co/mispeech/midashenglm-7b-0804-fp32"><img src="https://img.shields.io/badge/HuggingFace-7B-ffcc66" alt="version"></a>
     <a href="https://modelscope.cn/models/midasheng/midashenglm-7b"><img src="https://img.shields.io/badge/ModelScope-7B-7448ce" alt="version"></a>
     <a href="https://modelscope.cn/studios/midasheng/MiDashengLM-7B"><img src="https://img.shields.io/badge/Demo-Gradio-ffcc66" alt="version"></a>
     <a href="https://xiaomi-research.github.io/dasheng-lm/"><img src="https://img.shields.io/badge/Demo-Page-0366d6" alt="version"></a>
@@ -105,10 +105,10 @@ We provide multiple precision / quantization formats to cover different deployme
 
 | Variant | Format | Hugging Face | ModelScope |
 |:-------:|:------:|:------------:|:----------:|
-| midashenglm-7b | FP32 | [Link](https://huggingface.co/mispeech/midashenglm-7b) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b) |
-| midashenglm-7b-bf16 | BF16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-bf16) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-bf16) |
-| midashenglm-7b-fp8 | FP8 | [Link](https://huggingface.co/mispeech/midashenglm-7b-fp8) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-fp8) |
-| midashenglm-7b-gptq-w4a16 | GPTQ W4A16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-gptq-w4a16) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-gptq-w4a16) |
+| midashenglm-7b | FP32 | [Link](https://huggingface.co/mispeech/midashenglm-7b-0804-fp32) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-0804-fp32) |
+| midashenglm-7b-bf16 | BF16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-0804-bf16) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-0804-bf16) |
+| midashenglm-7b-fp8 | FP8 | [Link](https://huggingface.co/mispeech/midashenglm-7b-0804-fp8) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-0804-fp8) |
+| midashenglm-7b-gptq-w4a16 | GPTQ W4A16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-0804-w4a16-gptq) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-0804-w4a16-gptq) |
 
 Usage Guidance:
 
