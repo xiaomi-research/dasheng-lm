@@ -15,6 +15,7 @@
 
 ## 📢 News
 
+- **2025-10-21**: Model updated from 0804 (tech report version) to [1021](https://huggingface.co/mispeech/midashenglm-7b-1021-fp32), supports audio-embedded instructions (e.g., "Follow the instruction at the start of an audio.") previously text-only.
 - **2025-10-09**: Uploaded several newly [quantized model variants](https://github.com/xiaomi-research/dasheng-lm#available-model-variants) for resource-constrained devices.
 - **2025-09-24**: Released the [mdl-toolkit](https://github.com/xiaomi-research/dasheng-lm/tree/main/mdl-toolkit), a user-friendly fine-tuning toolkit for MiDashengLM. ESC-50 example Notebook: [en](https://github.com/xiaomi-research/dasheng-lm/blob/main/mdl-toolkit/docs_en/esc-50.ipynb) | [中文](https://github.com/xiaomi-research/dasheng-lm/blob/main/mdl-toolkit/docs_zh/esc-50.ipynb)
 - **2025-09-04**: vLLM now officially supports MiDashengLM. [Deploy dasheng-lm with vLLM](#deploy-with-vllm). And we're developing the 4-bit quantized version, please stay tuned.
@@ -107,12 +108,12 @@ We will **release the ACAVCaps dataset** after the ICASSP 2026 review process.
 
 We provide multiple precision / quantization formats to cover different deployment and fine-tuning scenarios:
 
-| Variant | Format | Hugging Face (0804) | ModelScope (0804) |
+| Variant | Format | Hugging Face (1021) | ModelScope (1021)) |
 |:-------:|:------:|:------------:|:----------:|
-| midashenglm-7b | FP32 | [Link](https://huggingface.co/mispeech/midashenglm-7b-0804-fp32) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-0804-fp32) |
-| midashenglm-7b-bf16 | BF16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-0804-bf16) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-0804-bf16) |
-| midashenglm-7b-fp8 | FP8 | [Link](https://huggingface.co/mispeech/midashenglm-7b-0804-fp8) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-0804-fp8) |
-| midashenglm-7b-gptq-w4a16 | GPTQ W4A16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-0804-w4a16-gptq) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-0804-w4a16-gptq) |
+| midashenglm-7b | FP32 | [Link](https://huggingface.co/mispeech/midashenglm-7b-1021-fp32) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-1021-fp32) |
+| midashenglm-7b-bf16 | BF16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-1021-bf16) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-1021-bf16) |
+| midashenglm-7b-fp8 | FP8 | [Link](https://huggingface.co/mispeech/midashenglm-7b-1021-fp8) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-1021-fp8) |
+| midashenglm-7b-w4a16-gptq | GPTQ W4A16 | [Link](https://huggingface.co/mispeech/midashenglm-7b-1021-w4a16-gptq) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-1021-w4a16-gptq) |
 
 Usage Guidance:
 
@@ -130,7 +131,7 @@ The full list model variants of MiDashengLM: [Hugging Face](https://huggingface.
 ```python
 from transformers import AutoModelForCausalLM, AutoProcessor, AutoTokenizer
 
-model_id = "mispeech/midashenglm-7b-bf16"
+model_id = "mispeech/midashenglm-7b-1021-bf16"
 
 model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
