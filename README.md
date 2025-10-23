@@ -122,7 +122,7 @@ Usage Guidance:
 * **FP8**: Optimized for Hopper-class (H100 and newer) GPUs, leveraging hardware support for enhanced performance and memory savings. While older GPUs may see limited performance gains, FP8 can still be used to conserve VRAM, and storage.
 * **GPTQ W4A16**: An ideal choice for resource-constrained environments. It offers broad GPU compatibility and a smaller memory footprint, making it suitable for deployment where VRAM, memory, or storage is limited, provided that a slight trade-off in quality is acceptable.
 
-The full list model variants of MiDashengLM: [Hugging Face](https://huggingface.co/models?search=midashenglm-) / [Model Scope](https://huggingface.co/models?search=midashenglm-)
+The full list model variants of MiDashengLM: [Hugging Face](https://huggingface.co/models?search=midashenglm-) / [Model Scope](https://www.modelscope.cn/organization/midasheng)
 
 ## Usage
 
