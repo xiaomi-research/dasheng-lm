@@ -134,9 +134,13 @@ MiDashengLM is under the Apache License 2.0, and we encourage its use in **both 
 If you find MiDashengLM useful in your research, please consider citing our work:
 
 ```bib
-@misc{midashenglm7b,
-    title = {MiDashengLM: Efficient Audio Understanding with General Audio Captions},
-    author = {Xiaomi MiLM Plus Horizon Team},
-    year = {2025},
+@techreport{midashenglm7b,
+  title      = {MiDashengLM: Efficient Audio Understanding with General Audio Captions},
+  author     = {{Horizon Team, MiLM Plus}},
+  institution= {Xiaomi Inc.},
+  year       = {2025},
+  note       = {Contributors: Heinrich Dinkel et al. (listed alphabetically in Appendix B)},
+  url        = {https://arxiv.org/abs/2508.03983},
+  eprint     = {2508.03983},
 }
 ```
