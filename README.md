@@ -222,9 +222,6 @@ python3 examples/offline_inference/audio_language.py -m midashenglm
 python3 -m vllm.entrypoints.openai.api_server --model mispeech/midashenglm-7b --tensor-parallel-size 1 --served-model-name default --port 8000 --dtype float16 --max_model_len 4096 --trust_remote_code
 ```
 
-✨ **Coming Soon**
-We're currently developing **4-bit quantized versions**.
-
 ## Results
 
 The [technical report](https://arxiv.org/abs/2508.03983) primarily evaluates the [midashenglm-7b-0804-fp32](https://huggingface.co/mispeech/midashenglm-7b-0804-fp32) model, which represents our initial release from August 4, 2025. Note that our current best-performing model is [midashenglm-7b-1021](https://huggingface.co/collections/mispeech/midashenglm-7b-1021), though the technical report has not been updated to include its results. For detailed experimental tables and performance metrics, please refer to the [Hugging Face model pages](https://huggingface.co/models?search=midashenglm-7b) or the technical report.
