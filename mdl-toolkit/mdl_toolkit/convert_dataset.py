@@ -42,9 +42,7 @@ class ConvertConfig(DatasetConfig):
 def transpose(batch: dict[str, list[str]]) -> Iterable[dict[str, str]]:
     assert len(batch) > 0
     num_rows = len(next(iter(batch.values())))
-    assert all(len(v) == num_rows for v in batch.values()), (
-        "All columns must have the same length"
-    )
+    assert all(len(v) == num_rows for v in batch.values()), "All columns must have the same length"
 
     for i in range(num_rows):
         yield {key: value[i] for key, value in batch.items()}
@@ -166,24 +164,16 @@ def padding(
     result: list[_MDLModelInput] = []
     for example in batch:
         assert len(example["input_ids"]) == len(example["attention_mask"])
-        assert "labels" not in example or len(example["labels"]) == len(
-            example["input_ids"]
-        )
+        assert "labels" not in example or len(example["labels"]) == len(example["input_ids"])
 
         num_text_padding = max_text_length - len(example["input_ids"])
         num_audio_padding = max_audio_length - len(example["input_values"])
         result.append(
             {
-                "input_ids": [pad_token_id] * num_text_padding
-                + example.pop("input_ids"),
-                "attention_mask": [0] * num_text_padding
-                + example.pop("attention_mask"),
+                "input_ids": [pad_token_id] * num_text_padding + example.pop("input_ids"),
+                "attention_mask": [0] * num_text_padding + example.pop("attention_mask"),
                 "input_values": example.pop("input_values") + [0.0] * num_audio_padding,
-                **(
-                    {"labels": [-100] * num_text_padding + example.pop("labels")}
-                    if "labels" in example
-                    else {}
-                ),
+                **({"labels": [-100] * num_text_padding + example.pop("labels")} if "labels" in example else {}),
                 **example,
             }
         )
@@ -205,7 +195,5 @@ class ConvertDatasetCli(ConvertConfig):
     def cli_cmd(self) -> None:
         dataset = process_data(config=self, input_path=self.input, mode="train")
         if len(dataset) == 0:
-            raise ValueError(
-                "Processed dataset is empty. Please check your input data."
-            )
+            raise ValueError("Processed dataset is empty. Please check your input data.")
         dataset.save_to_disk(self.output)

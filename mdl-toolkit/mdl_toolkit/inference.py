@@ -39,9 +39,7 @@ class InferenceCli(InferenceConfig):
 
 
 def inference(config: InferenceCli) -> None:
-    tokenizer: PreTrainedTokenizerBase = AutoTokenizer.from_pretrained(
-        config.model_name
-    )
+    tokenizer: PreTrainedTokenizerBase = AutoTokenizer.from_pretrained(config.model_name)
 
     model = AutoModelForCausalLM.from_pretrained(
         pretrained_model_name_or_path=config.model_name,

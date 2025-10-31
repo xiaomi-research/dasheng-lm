@@ -42,9 +42,7 @@ class TrainConfig(ConvertConfig):
     lora_rank: int = 32
     lora_alpha: int = 32
     lora_dropout: float = 0
-    train_target: set[
-        Literal["encoder", "projector", "decoder", "embed_tokens", "lm_head"]
-    ] = {
+    train_target: set[Literal["encoder", "projector", "decoder", "embed_tokens", "lm_head"]] = {
         "encoder",
         "projector",
         "decoder",
@@ -93,8 +91,7 @@ def train(config: TrainCli) -> None:
 
     model_dtype = (
         torch.bfloat16
-        if config.bf16 is True
-        or (config.bf16 is None and torch.cuda.is_bf16_supported())
+        if config.bf16 is True or (config.bf16 is None and torch.cuda.is_bf16_supported())
         else torch.float32
     )
 
@@ -105,17 +102,11 @@ def train(config: TrainCli) -> None:
     else:
         model_name = config.model_name
 
-    processor: ProcessorMixin = AutoProcessor.from_pretrained(
-        model_name, trust_remote_code=True
-    )
+    processor: ProcessorMixin = AutoProcessor.from_pretrained(model_name, trust_remote_code=True)
     tokenizer: PreTrainedTokenizerBase = AutoTokenizer.from_pretrained(model_name)
 
     train_ds = load_dataset(config, os.fspath(config.train_dataset))
-    eval_ds = (
-        load_dataset(config, os.fspath(config.eval_dataset))
-        if config.eval_dataset is not None
-        else None
-    )
+    eval_ds = load_dataset(config, os.fspath(config.eval_dataset)) if config.eval_dataset is not None else None
 
     quantization_config: BitsAndBytesConfig | None
     match config.quantization:
@@ -137,11 +128,7 @@ def train(config: TrainCli) -> None:
         trust_remote_code=True,
         dtype=model_dtype,
         device_map="auto",
-        **(
-            dict(quantization_config=quantization_config)
-            if quantization_config is not None
-            else {}
-        ),
+        **(dict(quantization_config=quantization_config) if quantization_config is not None else {}),
     )
 
     print(f"Model loaded with {model.dtype}")
@@ -153,9 +140,7 @@ def train(config: TrainCli) -> None:
     if "projector" in config.train_target:
         target_modules.append(r"^audio_projector\.net\.(0|2)$")
     if "decoder" in config.train_target:
-        target_modules.append(
-            r"^decoder\.model\.layers\.\d+\.(self_attn|mlp)\.(up|gate|down)_proj$"
-        )
+        target_modules.append(r"^decoder\.model\.layers\.\d+\.(self_attn|mlp)\.(up|gate|down)_proj$")
     if "embed_tokens" in config.train_target:
         modules_to_save.append("embed_tokens")
     if "lm_head" in config.train_target:
@@ -213,9 +198,7 @@ def train(config: TrainCli) -> None:
     )
 
     if torch.cuda.is_available():
-        print(
-            f"Peak VRAM during loading: {torch.cuda.max_memory_allocated() / 1024**3:.3f} GiB"
-        )
+        print(f"Peak VRAM during loading: {torch.cuda.max_memory_allocated() / 1024**3:.3f} GiB")
         torch.cuda.reset_peak_memory_stats()
 
     result = trainer.train(resume_from_checkpoint=config.resume_from_checkpoint)
@@ -223,9 +206,7 @@ def train(config: TrainCli) -> None:
         print(result)
 
     if torch.cuda.is_available():
-        print(
-            f"Peak VRAM during training: {torch.cuda.max_memory_allocated() / 1024**3:.3f} GiB"
-        )
+        print(f"Peak VRAM during training: {torch.cuda.max_memory_allocated() / 1024**3:.3f} GiB")
 
     if config.merge_lora:
         model = model.merge_and_unload()
