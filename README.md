@@ -151,12 +151,6 @@ user_prompt = "Caption the audio."  # You may try any other prompt
 
 messages = [
     {
-        "role": "system",
-        "content": [
-            {"type": "text", "text": "You are a helpful language and speech assistant."}
-        ],
-    },
-    {
         "role": "user",
         "content": [
             {"type": "text", "text": user_prompt},
