@@ -1,20 +1,20 @@
 <div align="center">
     <h1>
-    MiDashengLM-7B
+    MiDashengLM
     </h1>
     <b><em>Efficient audio understanding with general audio captions</em></b></em></b>
     <p>
     </p>
     <a href="https://arxiv.org/abs/2508.03983"><img src="https://img.shields.io/badge/arXiv-2508.03983-b31b1b" alt="version"></a>
-    <a href="https://huggingface.co/models?search=midashenglm-7b"><img src="https://img.shields.io/badge/HuggingFace-7B-ffcc66" alt="version"></a>
+    <img src="https://img.shields.io/badge/HuggingFace-555555" alt="HuggingFace"><a href="https://huggingface.co/models?search=midashenglm-7b"><img src="https://img.shields.io/badge/7B-FFD21E" alt="version"></a><a href="https://huggingface.co/models?search=midashenglm-0.6b"><img src="https://img.shields.io/badge/0.6B-FFD21E" alt="version"></a>
     <a href="https://www.modelscope.cn/collections/MiDashengLM-7B-1021-459c73ff1d6d4c"><img src="https://img.shields.io/badge/ModelScope-7B-7448ce" alt="version"></a>
-    <a href="https://modelscope.cn/studios/midasheng/MiDashengLM-7B"><img src="https://img.shields.io/badge/Demo-Gradio-ffcc66" alt="version"></a>
-    <a href="https://xiaomi-research.github.io/dasheng-lm/"><img src="https://img.shields.io/badge/Demo-Page-0366d6" alt="version"></a>
+    <img src="https://img.shields.io/badge/Demo-555555" alt="Demo"><a href="https://xiaomi-research.github.io/dasheng-lm/"><img src="https://img.shields.io/badge/7B-0366d6" alt="version"></a><a href="https://mdl-wasm.zhoukz.com/"><img src="https://img.shields.io/badge/0.6B-0366d6" alt="version"></a>
     <a href="https://github.com/xiaomi-research/dasheng-lm/tree/main/mdl-toolkit"><img src="https://img.shields.io/badge/Fine--tune-mdl--toolkit-brightgreen" alt="version"></a>
 </div>
 
 ## 📢 News
 
+- **2025-04-21**: Released MiDashengLM-0.6B, a lightweight variant based on Qwen3-0.6B, available in FP32 for HuggingFace inference and GGUF (3-bit to 16-bit) for CPU deployment via llama.cpp. [MDL-0.6B-FP32](https://huggingface.co/mispeech/midashenglm-0.6b-fp32) | [MDL-0.6B-GGUF](https://huggingface.co/mispeech/midashenglm-0.6b-gguf) | [Demo](https://mdl-wasm.zhoukz.com/) | [Video](https://x.com/RicherMansX/status/2045044052358234575)
 - **2025-10-21**: Model updated from 0804 (tech report version) to [1021](https://huggingface.co/collections/mispeech/midashenglm-7b-1021), supports audio-embedded instructions (e.g., "Follow the instruction at the start of an audio.") previously text-only.
 - **2025-10-09**: Uploaded several newly [quantized model variants](https://github.com/xiaomi-research/dasheng-lm#available-model-variants) for resource-constrained devices.
 - **2025-09-24**: Released the [mdl-toolkit](https://github.com/xiaomi-research/dasheng-lm/tree/main/mdl-toolkit), a user-friendly fine-tuning toolkit for MiDashengLM. ESC-50 example Notebook: [en](https://github.com/xiaomi-research/dasheng-lm/blob/main/mdl-toolkit/docs_en/esc-50.ipynb) | [中文](https://github.com/xiaomi-research/dasheng-lm/blob/main/mdl-toolkit/docs_zh/esc-50.ipynb)
@@ -23,10 +23,14 @@
 
 ## 🔥 Key Highlights
 
+**Flexible Model Sizes**
+   - Available in **7B** and **0.6B** variants, covering high-performance servers to CPU-only edge devices.
+   - 0.6B supports CPU deployment via [llama.cpp](https://huggingface.co/mispeech/midashenglm-0.6b-gguf) and runs directly in the browser via [WebAssembly](https://mdl-wasm.zhoukz.com/).
+
 **State-of-the-Art Performance**
    - Outperforms Qwen2.5-Omni-7B, Kimi-Audio-Instruct-7B on **multiple key audio understanding tasks**.
 
-**High Efficiency**
+**High Efficiency (MDL-7B)**
    - **3.2×** throughput speedup at comparable batch sizes compared to Qwen2.5-Omni-7B.
    - **20x** throughput speedup by increasing furhter batchsizes. We tested up to a **batch size=512** for 30s audio input on 80GB GPUs. Baselines only support batch size = 8.
    - Time-to-first-token (TTFT) speedup of up to **4x** compared to Qwen2.5-Omni-7B.
@@ -50,7 +54,8 @@
 
 Although MiDashengLM demonstrates superior audio understanding performance and efficiency compared to Qwen2.5-Omni models,
 we acknowledge **Qwen2.5-Omni as a remarkable and respected foundational work** in the field.
-Our model specifically uses [Qwen2.5-Omni-7B Thinker](https://huggingface.co/Qwen/Qwen2.5-Omni-7B) as the initialization for decoder training, building upon its robust architecture and weight initialization.
+Our 7B model specifically uses [Qwen2.5-Omni-7B Thinker](https://huggingface.co/Qwen/Qwen2.5-Omni-7B) as the initialization for decoder training, building upon its robust architecture and weight initialization.
+The 0.6B variant uses [Qwen3-0.6B](https://huggingface.co/Qwen/Qwen3-0.6B) as the decoder initialization, offering a lightweight alternative for resource-constrained deployment.
 
 The audio encoder is built upon [Dasheng](https://github.com/XiaoMi/dasheng), an open-source audio encoder for general audio understanding with state-of-the-art performance.
 **Dasheng serves as the core foundation enabling MiDashengLM's exceptional performance**.
@@ -108,6 +113,17 @@ We will **release the ACAVCaps dataset** after the ICASSP 2026 review process.
 
 We provide multiple precision / quantization formats to cover different deployment and fine-tuning scenarios:
 
+### MiDashengLM-0.6B
+
+| Variant | Format | Hugging Face |
+|:-------:|:------:|:------------:|
+| midashenglm-0.6b | FP32 | [Link](https://huggingface.co/mispeech/midashenglm-0.6b-fp32) |
+| midashenglm-0.6b-gguf | GGUF (3/4/5/6/8/16-bit) | [Link](https://huggingface.co/mispeech/midashenglm-0.6b-gguf) |
+
+The 0.6B GGUF models can be deployed on CPU using llama.cpp, or run directly in the browser. See the [GGUF model page](https://huggingface.co/mispeech/midashenglm-0.6b-gguf) for instructions, or try the [WASM demo](https://mdl-wasm.zhoukz.com/) ([video](https://x.com/RicherMansX/status/2045044052358234575)).
+
+### MiDashengLM-7B
+
 | Variant | Format | Hugging Face (1021) | ModelScope (1021)) |
 |:-------:|:------:|:------------:|:----------:|
 | midashenglm-7b | FP32 | [Link](https://huggingface.co/mispeech/midashenglm-7b-1021-fp32) | [Link](https://www.modelscope.cn/models/midasheng/midashenglm-7b-1021-fp32) |
@@ -131,7 +147,10 @@ The full list model variants of MiDashengLM: [Hugging Face](https://huggingface.
 ```python
 from transformers import AutoModelForCausalLM, AutoProcessor, AutoTokenizer
 
+# For 7B:
 model_id = "mispeech/midashenglm-7b-1021-bf16"
+# For 0.6B:
+# model_id = "mispeech/midashenglm-0.6b-fp32"
 
 model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
